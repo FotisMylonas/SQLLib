@@ -1,1 +1,4 @@
 Index Analysis Script - https://github.com/StrateSQL/sqlserver_indexanalysis
+
+Brent Ozar First Responder Kit - https://github.com/BrentOzarULTD/SQL-Server-First-Responder-Kit/
+	EXEC sp_BlitzFirst @SinceStartup = 1;
