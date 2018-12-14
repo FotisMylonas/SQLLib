@@ -1,0 +1,1 @@
+Index Analysis Script - https://github.com/StrateSQL/sqlserver_indexanalysis
