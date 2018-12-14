@@ -1,4 +1,28 @@
+1)
 Index Analysis Script - https://github.com/StrateSQL/sqlserver_indexanalysis
 
+2)
 Brent Ozar First Responder Kit - https://github.com/BrentOzarULTD/SQL-Server-First-Responder-Kit/
+	https://www.brentozar.com/askbrent/	
+	https://www.brentozar.com/archive/2017/10/free-sql-server-performance-check/	
 	EXEC sp_BlitzFirst @SinceStartup = 1;
+	
+	
+	EXEC sp_Blitz @CheckUserDatabaseObjects = 0, @CheckServerInfo = 1;
+
+	https://www.brentozar.com/blitzcache/
+
+3)
+http://whoisactive.com/downloads/
+	https://www.brentozar.com/archive/2010/09/sql-server-dba-scripts-how-to-find-slow-sql-server-queries/
+	EXEC dbo.sp_WhoIsActive
+	     @show_own_spid = 1,
+		--@show_system_spids = 1,
+		--Controls how sleeping SPIDs are handled, based on the idea of levels of interest
+		--0 does not pull any sleeping SPIDs
+		--1 pulls only those sleeping SPIDs that also have an open transaction
+		--2 pulls all sleeping SPIDs
+	     @show_sleeping_spids = 1,
+	     @get_plans = 1, -- this gives you the execution plans for running queries.
+	     @get_locks = 1, -- gives you an XML snippet you can click on to see what table, row, object, etc locks each query owns. Useful when you’re trying to figure out why one query is blocking others.
+	     @get_task_info = 2; -- if a query has gone parallel and you’re troubleshooting CXPACKET waits, you can figure out what each task in the query is waiting on.
